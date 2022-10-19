@@ -1,6 +1,6 @@
 import React from "react";
-import { Actions, Keyboard, Trainer } from "components";
 import { useAppDispatch } from "hooks";
+import { Actions, Keyboard, Stats, Trainer } from "components";
 import { fetchTrainerText, resetTrainerState } from "store/actions";
 
 import "keyboard-css";
@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="app">
+      <Stats />
       <Trainer />
       <Actions />
       <Keyboard />
