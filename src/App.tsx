@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Actions, Keyboard, Trainer } from "components";
+import { useAppDispatch } from "hooks";
+import { fetchTrainerText, resetTrainerState } from "store/actions";
+
+import "keyboard-css";
+import "./styles.scss";
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchTrainerText());
+
+    return () => {
+      dispatch(resetTrainerState());
+    };
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Trainer />
+      <Actions />
+      <Keyboard />
     </div>
   );
 }

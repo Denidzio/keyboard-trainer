@@ -1,0 +1,195 @@
+.keyboard {
+  pointer-events: none;
+
+  .keyboard-row {
+    height: 60px;
+    display: flex;
+  }
+
+  .kbc-button {
+    width: 40px;
+    height: 40px;
+    padding: 0.375rem 0.65rem;
+
+    .sub-title {
+      margin-left: 3px;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    &.Backquote,
+    &.Digit1,
+    &.Tab,
+    &.KeyQ,
+    &.CapsLock,
+    &.KeyA,
+    &.ShiftLeft,
+    &.KeyZ,
+    &.MetaLeft,
+    &.ControlLeft,
+    &.AltLeft {
+      background-color: #f8abab;
+    }
+
+    &.Digit2,
+    &.KeyW,
+    &.KeyS,
+    &.KeyX {
+      background-color: #729fcf;
+    }
+
+    &.Digit3,
+    &.KeyE,
+    &.KeyD,
+    &.KeyC {
+      background-color: #73d216;
+    }
+
+    &.Digit4,
+    &.Digit5,
+    &.KeyR,
+    &.KeyT,
+    &.KeyF,
+    &.KeyG,
+    &.KeyV,
+    &.KeyB {
+      background-color: #fcaf3e;
+    }
+
+    &.Digit6,
+    &.Digit7,
+    &.KeyY,
+    &.KeyU,
+    &.KeyH,
+    &.KeyJ,
+    &.KeyN,
+    &.KeyM {
+      background-color: #fce94f;
+    }
+
+    &.Digit8,
+    &.KeyI,
+    &.KeyK,
+    &.Comma {
+      background-color: #73d216;
+    }
+
+    &.Digit9,
+    &.KeyO,
+    &.KeyL,
+    &.Period {
+      background-color: #729fcf;
+    }
+
+    &.Digit0,
+    &.Minus,
+    &.Equal,
+    &.Backspace,
+    &.KeyP,
+    &.BracketLeft,
+    &.BracketRight,
+    &.Backslash,
+    &.Semicolon,
+    &.Quote,
+    &.Enter,
+    &.Slash,
+    &.ShiftRight,
+    &.AltRight,
+    &.ControlRight,
+    &.ContextMenu,
+    &.MetaRight {
+      background-color: #f8abab;
+    }
+
+    &.Backspace,
+    &.Tab,
+    &.CapsLock,
+    &.Enter,
+    &.ShiftLeft,
+    &.ShiftRight,
+    &.MetaLeft,
+    &.ControlLeft,
+    &.AltLeft,
+    &.Space,
+    &.AltRight,
+    &.ControlRight,
+    &.ContextMenu,
+    &.MetaRight {
+      padding: 0.375rem;
+      font-size: 0.7rem;
+      white-space: nowrap;
+    }
+
+    &.KeyF,
+    &.KeyJ {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    &.Backspace {
+      width: 105px;
+    }
+
+    &.Tab {
+      width: 65px;
+    }
+
+    &.Backslash {
+      width: 80px;
+    }
+
+    &.CapsLock {
+      width: 75px;
+    }
+
+    &.Enter {
+      width: 125px;
+    }
+
+    &.ShiftLeft {
+      width: 105px;
+    }
+
+    &.ShiftRight {
+      width: 150px;
+    }
+
+    &.MetaLeft {
+      width: 60px;
+    }
+
+    &.AltLeft {
+      width: 65px;
+    }
+
+    &.Space {
+      width: 300px;
+      background-color: #b5bfc3;
+    }
+
+    &.AltRight {
+      width: 60px;
+    }
+
+    &.ControlRight {
+      width: 60px;
+    }
+
+    &.ContextMenu {
+      width: 60px;
+    }
+
+    &.MetaRight {
+      width: 60px;
+    }
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.hide-filling .kbc-button {
+    background-color: #ffffff;
+  }
+}

@@ -1,0 +1,13 @@
+.trainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+  margin-bottom: 25px;
+
+  .random-text {
+    span.is-entered {
+      opacity: 0.4;
+    }
+  }
+}
