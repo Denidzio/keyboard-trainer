@@ -7,6 +7,7 @@ type TrainerState = {
     data: string | null;
     isFetching: boolean;
   };
+  startTypingTimestamp: number | null;
 };
 
 const initialState: TrainerState = {
@@ -15,6 +16,7 @@ const initialState: TrainerState = {
     data: null,
     isFetching: false,
   },
+  startTypingTimestamp: null,
 };
 
 export const trainerSlice = createSlice({
@@ -23,6 +25,11 @@ export const trainerSlice = createSlice({
   reducers: {
     setEnteredText: (state, action: PayloadAction<string>) => {
       state.enteredText = action.payload;
+
+      state.startTypingTimestamp =
+        action.payload.length && !state.startTypingTimestamp
+          ? Date.now()
+          : state.startTypingTimestamp;
     },
     resetTrainerState: (state) => {
       state = initialState;
@@ -33,8 +40,10 @@ export const trainerSlice = createSlice({
       state.randomText.isFetching = true;
     });
     builder.addCase(fetchTrainerText.fulfilled, (state, action) => {
-      state.randomText.data = action.payload;
+      state.randomText.data =
+        "Some random text. Please, enter me. Otherwise, I will enter you.";
       state.randomText.isFetching = false;
+      state.startTypingTimestamp = null;
     });
     builder.addCase(fetchTrainerText.rejected, (state) => {
       state.randomText.isFetching = false;
